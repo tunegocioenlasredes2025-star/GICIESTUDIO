@@ -1,9 +1,0 @@
-{
-  "name": "gici-web",
-  "version": "1.0.0",
-  "private": true,
-  "description": "GICI — Gestión Integral Contable e Impositiva. Sitio web estático del estudio contable.",
-  "scripts": {
-    "build": "echo 'Static site — no build step required'"
-  }
-}
