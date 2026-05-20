@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GICI · Estudio contable en Ituzaingó · Gestión Integral Contable e Impositiva</title>
+  <meta name="description" content="Estudio contable en Ituzaingó. Asesoramiento impositivo y laboral, liquidación de ganancias, bienes personales y asesoramiento comercial. Atención cercana y profesional." />
+  <meta name="theme-color" content="#fbfaf8" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:title" content="GICI — Gestión Integral Contable e Impositiva" />
+  <meta property="og:description" content="Estudio contable en Ituzaingó. Soluciones impositivas, laborales y comerciales para personas y empresas." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT:'#08818a', 50:'#effbfb', 100:'#d7f4f5', 200:'#b3e8eb', 300:'#7ed4da', 400:'#42b6c0', 500:'#27989f', 600:'#08818a', 700:'#0b6770', 800:'#0f535a', 900:'#11464c', 950:'#042c31' },
+            ink: { DEFAULT:'#1b110c', 50:'#f7f5f4', 100:'#ebe7e5', 200:'#cdc4c0', 300:'#a89c96', 400:'#7d6d66', 500:'#5d4f49', 600:'#48403c', 700:'#393331', 800:'#2a2421', 900:'#1b110c' },
+            cream:'#fbfaf8', ivory:'#f4f1ee', stoneWarm:'#665e5c'
+          },
+          fontFamily: {
+            sans:['Inter','system-ui','sans-serif'],
+            display:['Sora','system-ui','sans-serif'],
+            body:['Manrope','system-ui','sans-serif']
+          },
+          boxShadow: {
+            soft:'0 4px 24px -8px rgba(27,17,12,0.08)',
+            premium:'0 20px 60px -20px rgba(8,129,138,0.25), 0 6px 20px -10px rgba(27,17,12,0.08)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior:smooth; -webkit-font-smoothing:antialiased; }
+    body { font-family:'Manrope', system-ui, sans-serif; background:#fbfaf8; color:#1b110c;
+      background-image:
+        radial-gradient(1200px 600px at 0% -10%, rgba(8,129,138,0.06), transparent 60%),
+        radial-gradient(900px 500px at 100% 0%, rgba(8,129,138,0.04), transparent 55%);
+      background-attachment:fixed;
+    }
+    h1,h2,h3,h4,h5,h6 { font-family:'Sora', system-ui, sans-serif; }
+    ::selection { background:rgba(8,129,138,.2); color:#1b110c; }
+
+    .glass { background:linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,255,255,.5)); backdrop-filter:saturate(140%) blur(14px); -webkit-backdrop-filter:saturate(140%) blur(14px); border:1px solid rgba(255,255,255,.6); }
+
+    .gradient-text { background-image:linear-gradient(120deg,#08818a 0%,#42b6c0 45%,#1b110c 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+    .gradient-border { position:relative; isolation:isolate; }
+    .gradient-border::before {
+      content:''; position:absolute; inset:0; border-radius:inherit; padding:1px;
+      background:linear-gradient(140deg, rgba(8,129,138,.6), rgba(255,255,255,.2) 40%, rgba(8,129,138,.15) 70%, rgba(27,17,12,.25));
+      -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude; pointer-events:none;
+    }
+
+    .grid-pattern {
+      background-image: linear-gradient(to right, rgba(8,129,138,.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(8,129,138,.08) 1px, transparent 1px);
+      background-size: 56px 56px;
+      -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, #000 30%, transparent 80%);
+              mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, #000 30%, transparent 80%);
+    }
+
+    .text-balance { text-wrap: balance; }
+
+    @keyframes floatSlow { 0%,100%{transform:translateY(0) translateX(0)} 50%{transform:translateY(-18px) translateX(8px)} }
+    .float-slow { animation: floatSlow 8s ease-in-out infinite; }
+
+    @keyframes pulseRing { 0%{transform:scale(.9);opacity:.7} 70%,100%{transform:scale(2);opacity:0} }
+    .pulse-ring { animation: pulseRing 2.4s cubic-bezier(0.4,0,0.6,1) infinite; }
+
+    @keyframes fadeUp { 0%{opacity:0; transform:translateY(24px); filter:blur(6px)} 100%{opacity:1; transform:translateY(0); filter:blur(0)} }
+    .reveal { opacity:0; }
+    .reveal.in { animation: fadeUp .9s cubic-bezier(.22,1,.36,1) both; }
+
+    .display-xl { font-size:clamp(2.75rem,6vw,5.5rem); line-height:1.02; letter-spacing:-.035em; }
+    .display-lg { font-size:clamp(2.25rem,4.5vw,4rem); line-height:1.05; letter-spacing:-.03em; }
+    .display-md { font-size:clamp(1.75rem,3vw,2.75rem); line-height:1.1; letter-spacing:-.02em; }
+
+    input, textarea { font-family: inherit; }
+    .nav-link.active { background: rgba(27,17,12,.06); color:#1b110c; }
+  </style>
+</head>
+<body class="font-body min-h-screen flex flex-col">
+
+<!-- ========== NAVBAR ========== -->
+<header id="nav" class="fixed inset-x-0 top-0 z-40 pt-4 transition-all duration-500">
+  <div class="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+    <nav id="navbar" class="relative flex items-center justify-between gap-6 rounded-full h-16 px-2 pl-4 transition-all duration-500">
+      <a href="#inicio" class="group inline-flex items-center gap-3" aria-label="GICI — Inicio">
+        <span class="relative grid place-items-center overflow-hidden rounded-2xl ring-1 ring-ink/10 bg-white shadow-soft" style="width:36px;height:36px;">
+          <img src="/assets/images/logo.png" alt="GICI" class="h-full w-full object-contain p-1" />
+        </span>
+        <span class="flex flex-col leading-none text-ink">
+          <span class="font-display text-[1.15rem] font-semibold tracking-tight">GICI<span class="text-brand-600">.</span></span>
+          <span class="text-[0.6rem] uppercase tracking-[0.22em] mt-1 text-ink/55">Contable · Impositivo</span>
+        </span>
+      </a>
+
+      <ul class="hidden items-center gap-1 lg:flex" id="navList">
+        <li><a href="#inicio" class="nav-link inline-flex h-9 items-center rounded-full px-4 text-sm font-medium text-ink/70 hover:text-ink transition">Inicio</a></li>
+        <li><a href="#servicios" class="nav-link inline-flex h-9 items-center rounded-full px-4 text-sm font-medium text-ink/70 hover:text-ink transition">Servicios</a></li>
+        <li><a href="#nosotros" class="nav-link inline-flex h-9 items-center rounded-full px-4 text-sm font-medium text-ink/70 hover:text-ink transition">Nosotros</a></li>
+        <li><a href="#contacto" class="nav-link inline-flex h-9 items-center rounded-full px-4 text-sm font-medium text-ink/70 hover:text-ink transition">Contacto</a></li>
+      </ul>
+
+      <div class="hidden items-center gap-2 lg:flex">
+        <a href="https://wa.me/541154956931?text=Hola%20GICI%2C%20quisiera%20hacer%20una%20consulta%20sobre%20sus%20servicios." target="_blank" rel="noopener" class="inline-flex h-10 items-center rounded-full px-4 text-sm font-medium text-ink/80 hover:bg-ink/5 transition">WhatsApp</a>
+        <a href="#contacto" class="group inline-flex h-10 items-center gap-2 rounded-full bg-ink px-5 text-sm font-medium text-cream hover:bg-ink/90 shadow-premium transition-all hover:-translate-y-[1px]">
+          Consultar
+          <svg class="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+      </div>
+
+      <button id="navToggle" aria-label="Abrir menú" class="grid h-11 w-11 place-items-center rounded-full bg-ink text-cream lg:hidden">
+        <svg id="iconMenu" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg id="iconClose" class="h-5 w-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </nav>
+  </div>
+
+  <!-- mobile drawer -->
+  <div id="mobile" class="hidden fixed inset-0 top-0 z-30 lg:hidden">
+    <div class="absolute inset-0 bg-ink/30 backdrop-blur-sm" onclick="toggleMenu()"></div>
+    <div class="relative mx-4 mt-24 rounded-3xl bg-cream p-6 shadow-premium ring-1 ring-ink/5">
+      <ul class="flex flex-col">
+        <li><a href="#inicio" onclick="toggleMenu()" class="flex items-center justify-between border-b border-ink/5 py-4 font-display text-xl text-ink">Inicio <span class="text-ink/40">→</span></a></li>
+        <li><a href="#servicios" onclick="toggleMenu()" class="flex items-center justify-between border-b border-ink/5 py-4 font-display text-xl text-ink">Servicios <span class="text-ink/40">→</span></a></li>
+        <li><a href="#nosotros" onclick="toggleMenu()" class="flex items-center justify-between border-b border-ink/5 py-4 font-display text-xl text-ink">Nosotros <span class="text-ink/40">→</span></a></li>
+        <li><a href="#contacto" onclick="toggleMenu()" class="flex items-center justify-between py-4 font-display text-xl text-ink">Contacto <span class="text-ink/40">→</span></a></li>
+      </ul>
+      <div class="mt-6 grid grid-cols-2 gap-2">
+        <a href="https://wa.me/541154956931" target="_blank" rel="noopener" class="inline-flex h-11 items-center justify-center rounded-full border border-ink/15 bg-white text-sm font-medium text-ink">WhatsApp</a>
+        <a href="#contacto" onclick="toggleMenu()" class="inline-flex h-11 items-center justify-center rounded-full bg-ink text-sm font-medium text-cream">Consultar</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="flex-1">
+
+<!-- ========== HERO ========== -->
+<section id="inicio" class="relative isolate overflow-hidden pt-32 pb-24 sm:pt-40 sm:pb-32">
+  <div class="pointer-events-none absolute inset-0 -z-10">
+    <div class="absolute inset-0 bg-gradient-to-b from-cream via-cream to-ivory"></div>
+    <div class="absolute inset-0 grid-pattern opacity-70"></div>
+    <div class="absolute -top-32 left-1/2 h-[720px] w-[720px] -translate-x-1/2 rounded-full" style="background:radial-gradient(closest-side, rgba(8,129,138,.22) 0%, rgba(8,129,138,.04) 60%, transparent 100%);"></div>
+    <div class="absolute right-[-10%] top-24 h-72 w-72 rounded-full bg-brand-300/30 blur-3xl float-slow"></div>
+    <div class="absolute left-[-8%] bottom-10 h-64 w-64 rounded-full bg-brand-600/15 blur-3xl float-slow"></div>
+  </div>
+
+  <div class="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+    <div class="grid items-center gap-14 lg:grid-cols-12">
+      <div class="lg:col-span-7">
+        <div class="reveal in inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-3.5 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-ink/70 backdrop-blur">
+          <svg class="h-3.5 w-3.5 text-brand-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5L18.2 22 12 17.5 5.8 22l2.4-8.1L2 9.4h7.6L12 2z"/></svg>
+          Estudio contable · Ituzaingó
+        </div>
+        <h1 class="reveal in mt-6 font-display display-xl font-semibold text-ink text-balance" style="animation-delay:.08s">
+          Soluciones <span class="gradient-text">contables e impositivas</span> para personas y empresas.
+        </h1>
+        <p class="reveal in mt-6 max-w-xl text-lg leading-relaxed text-ink/70" style="animation-delay:.18s">
+          Asesoramiento profesional, cercano y eficiente para ayudarte a crecer con tranquilidad. Cumplimiento, estrategia y acompañamiento real.
+        </p>
+        <div class="reveal in mt-9 flex flex-wrap items-center gap-3" style="animation-delay:.28s">
+          <a href="#contacto" class="group inline-flex items-center gap-2 rounded-full bg-ink h-14 px-8 text-base font-medium text-cream shadow-premium hover:-translate-y-[1px] transition-all">
+            Contactar
+            <svg class="h-4 w-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#servicios" class="inline-flex items-center gap-2 rounded-full h-14 px-8 text-base font-medium border border-ink/15 bg-white/60 text-ink hover:bg-white hover:border-ink/30 backdrop-blur transition-all">
+            Ver Servicios
+          </a>
+          <a href="https://wa.me/541154956931" target="_blank" rel="noopener" class="ml-1 inline-flex items-center gap-2 text-sm font-medium text-ink/70 hover:text-ink">
+            <span class="grid h-8 w-8 place-items-center rounded-full bg-brand-50 text-brand-700 ring-1 ring-brand-600/15">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            Consulta sin compromiso
+          </a>
+        </div>
+
+        <dl class="reveal in mt-14 grid max-w-xl grid-cols-3 gap-6 border-t border-ink/10 pt-8" style="animation-delay:.4s">
+          <div><dt class="font-display text-3xl font-semibold text-ink" data-count="15" data-suffix="+">0</dt><dd class="mt-1 text-xs uppercase tracking-[0.12em] text-ink/55">Años de experiencia</dd></div>
+          <div><dt class="font-display text-3xl font-semibold text-ink" data-count="200" data-suffix="+">0</dt><dd class="mt-1 text-xs uppercase tracking-[0.12em] text-ink/55">Clientes activos</dd></div>
+          <div><dt class="font-display text-3xl font-semibold text-ink" data-count="24" data-suffix="h">0</dt><dd class="mt-1 text-xs uppercase tracking-[0.12em] text-ink/55">Respuesta promedio</dd></div>
+        </dl>
+      </div>
+
+      <!-- Visual dashboard card -->
+      <div class="lg:col-span-5">
+        <div class="reveal in relative mx-auto w-full max-w-md" style="animation-delay:.3s">
+          <div class="gradient-border relative rounded-[28px] bg-white/70 p-6 shadow-premium backdrop-blur-xl">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-[0.65rem] uppercase tracking-[0.22em] text-ink/55">Tablero fiscal</p>
+                <p class="mt-1 font-display text-lg font-semibold text-ink">Q3 · 2026</p>
+              </div>
+              <div class="flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-[0.7rem] font-medium text-brand-700 ring-1 ring-brand-600/15">
+                <span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span> Al día
+              </div>
+            </div>
+            <div class="mt-6 space-y-3">
+              <div class="flex items-center justify-between rounded-2xl border border-ink/10 bg-white/80 px-4 py-3.5"><span class="text-sm text-ink/75">IVA · Posición mensual</span><span class="text-xs font-medium text-brand-700">Presentado</span></div>
+              <div class="flex items-center justify-between rounded-2xl border border-ink/10 bg-white/80 px-4 py-3.5"><span class="text-sm text-ink/75">F.931 · Sueldos</span><span class="text-xs font-medium" style="color:#665e5c">En proceso</span></div>
+              <div class="flex items-center justify-between rounded-2xl border border-ink/10 bg-white/80 px-4 py-3.5"><span class="text-sm text-ink/75">Ganancias · Anticipos</span><span class="text-xs font-medium text-ink/70">Programado</span></div>
+            </div>
+            <div class="mt-6 rounded-2xl border border-ink/10 bg-gradient-to-br from-white to-ivory p-4">
+              <div class="flex items-end justify-between">
+                <div><p class="text-xs text-ink/55">Cumplimiento anual</p><p class="mt-1 font-display text-2xl font-semibold text-ink">98.4%</p></div>
+                <svg viewBox="0 0 120 48" class="h-12 w-32" aria-hidden="true">
+                  <defs><linearGradient id="hg" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#08818a" stop-opacity=".45"/><stop offset="100%" stop-color="#08818a" stop-opacity="0"/></linearGradient></defs>
+                  <path d="M2 36 L20 28 L36 32 L54 18 L72 22 L90 10 L118 6" fill="none" stroke="#08818a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2 36 L20 28 L36 32 L54 18 L72 22 L90 10 L118 6 L118 48 L2 48 Z" fill="url(#hg)" opacity=".9"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="absolute -right-3 -top-4 flex items-center gap-2 rounded-2xl bg-ink px-3.5 py-2 text-xs text-cream shadow-premium ring-1 ring-cream/10">
+            <span class="grid h-6 w-6 place-items-center rounded-full bg-brand-600">
+              <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            Próximo vencimiento · 14 días
+          </div>
+          <div class="absolute -bottom-4 -left-4 rounded-2xl bg-white/80 px-3.5 py-2 text-xs text-ink shadow-soft ring-1 ring-ink/10 backdrop-blur">
+            <span class="text-ink/55">Atención</span> <span class="font-medium">personalizada 1-a-1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STATS ========== -->
+<section class="py-20 sm:py-24">
+  <div class="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+    <div class="reveal gradient-border rounded-[32px] bg-gradient-to-br from-ink to-[#241813] p-8 sm:p-12 shadow-premium overflow-hidden relative">
+      <div class="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-brand-600/30 blur-3xl"></div>
+      <div class="pointer-events-none absolute -left-16 -bottom-16 h-64 w-64 rounded-full bg-brand-400/20 blur-3xl"></div>
+      <div class="grid gap-10 sm:grid-cols-2 md:grid-cols-4 relative">
+        <div><div class="font-display text-5xl font-semibold text-cream sm:text-6xl" data-count="15" data-suffix="+">0</div><p class="mt-3 text-sm text-cream/60">Años de experiencia</p><div class="mt-5 h-px w-12 bg-gradient-to-r from-brand-300 to-transparent"></div></div>
+        <div><div class="font-display text-5xl font-semibold text-cream sm:text-6xl" data-count="200" data-suffix="+">0</div><p class="mt-3 text-sm text-cream/60">Clientes activos</p><div class="mt-5 h-px w-12 bg-gradient-to-r from-brand-300 to-transparent"></div></div>
+        <div><div class="font-display text-5xl font-semibold text-cream sm:text-6xl" data-count="98" data-suffix="%">0</div><p class="mt-3 text-sm text-cream/60">Retención de clientes</p><div class="mt-5 h-px w-12 bg-gradient-to-r from-brand-300 to-transparent"></div></div>
+        <div><div class="font-display text-5xl font-semibold text-cream sm:text-6xl" data-count="24" data-suffix="h">0</div><p class="mt-3 text-sm text-cream/60">Respuesta promedio</p><div class="mt-5 h-px w-12 bg-gradient-to-r from-brand-300 to-transparent"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICIOS ========== -->
+<section id="servicios" class="relative py-24 sm:py-28">
+  <div class="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+    <div class="reveal flex flex-col gap-4 items-center text-center">
+      <span class="inline-flex items-center gap-2 rounded-full border border-brand-600/20 bg-brand-50/70 px-3.5 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.18em] text-brand-700">
+        <span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span> Servicios
+      </span>
+      <h2 class="font-display display-md font-semibold text-ink text-balance">Áreas en las que <span class="gradient-text">te acompañamos</span></h2>
+      <p class="mx-auto max-w-2xl text-base text-ink/70 leading-relaxed text-balance">Cobertura completa para tu situación impositiva, laboral y comercial. Procesos prolijos, claros y a tiempo.</p>
+    </div>
+
+    <div class="mt-14 grid gap-5 sm:grid-cols-2">
+      <!-- card 1 -->
+      <article class="reveal group relative overflow-hidden rounded-3xl border border-ink/10 bg-white/70 p-7 backdrop-blur transition-all duration-500 hover:-translate-y-1 hover:border-brand-600/30 hover:shadow-premium">
+        <div class="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-brand-600/0 blur-2xl transition-all duration-700 group-hover:bg-brand-600/15"></div>
+        <div class="flex items-start justify-between">
+          <div class="grid h-14 w-14 place-items-center rounded-2xl text-cream shadow-premium ring-1 ring-white/20" style="background:linear-gradient(135deg,#08818a,#0f535a);">
+            <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v6c0 4.5 3 8.4 7.5 9 4.5-.6 7.5-4.5 7.5-9V6L12 3Z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <span class="grid h-9 w-9 place-items-center rounded-full border border-ink/10 text-ink/40 transition-all group-hover:border-ink/30 group-hover:text-ink group-hover:-rotate-12">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </span>
+        </div>
+        <h3 class="mt-6 font-display text-xl font-semibold text-ink">Asesoramiento impositivo y laboral</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink/65">Cumplimiento fiscal y laboral integral para que tu empresa opere con tranquilidad ante AFIP, ARBA y organismos provinciales.</p>
+        <ul class="mt-5 space-y-2">
+          <li class="flex items-start gap-2 text-sm text-ink/70"><span class="mt-2 h-1 w-1 rounded-full bg-brand-600"></span>Liquidación de impuestos nacionales y provinciales</li>
+          <li class="flex items-start gap-2 text-sm text-ink/70"><span class="mt-2 h-1 w-1 rounded-full bg-brand-600"></span>Sueldos, cargas sociales y régimen laboral</li>
+          <li class="flex items-start gap-2 text-sm text-ink/70"><span class="mt-2 h-1 w-1 rounded-full bg-brand-600"></span>Defensa ante inspecciones y fiscalizaciones</li>
+        </ul>
+      </article>
+
+      <!-- card 2 -->
+      <article class="reveal group relative overflow-hidden rounded-3xl border border-ink/10 bg-white/70 p-7 backdrop-blur transition-all duration-500 hover:-translate-y-1 hover:border-brand-600/30 hover:shadow-premium">
+        <div class="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-brand-600/0 blur-2xl transition-all duration-700 group-hover:bg-brand-600/15"></div>
+        <div class="flex items-start justify-between">
+          <div class="grid h-14 w-14 place-items-center rounded-2xl text-cream shadow-premium ring-1 ring-white/20" style="background:linear-gradient(135deg,#08818a,#0f535a);">
+            <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>
+          </div>
+          <span class="grid h-9 w-9 place-items-center rounded-full border border-ink/10 text-ink/40 transition-all group-hover:border-ink/30 group-hover:text-ink group-hover:-rotate-12">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </span>
+        </div>
+        <h3 class="mt-6 font-display text-xl font-semibold text-ink">Asesoramiento comercial</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink/65">Análisis, planificación y acompañamiento estratégico para que cada decisión de negocio esté respaldada con números claros.</p>
+        <ul class="mt-5 space-y-2">
+          <li class="flex items-start gap-2 text-sm text-ink/70"><span class="mt-2 h-1 w-1 rounded-full bg-brand-600"></span>Planificación impositiva y financiera</li>
+          <li class="flex items-start gap-2 text-sm text-ink/70"><span class="mt-2 h-1 w-1 rounded-full bg-brand-600"></span>Análisis de rentabilidad y costos</li>
+          <li class="flex items-start gap-2 text-sm text-ink/70"><span class="mt-2 h-1 w-1 rounded-full bg-brand-600"></span>Constitución de sociedades y reorganizaciones</li>
+        </ul>
+      </article>
+
+      <!-- card 3 -->
+      <article class="reveal group relative overflow-hidden rounded-3xl border border-ink/10 bg-white/70 p-7 backdrop-blur transition-all duration-500 hover:-translate-y-1 hover:border-brand-600/30 hover:shadow-premium">
+        <div class="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-brand-600/0 blur-2xl transition-all duration-700 group-hover:bg-brand-600/15"></div>
+        <div class="flex items-start justify-between">
+          <div class="grid h-14 w-14 place-items-center rounded-2xl text-cream shadow-premium ring-1 ring-white/20" style="background:linear-gradient(135deg,#08818a,#0f535a);">
+            <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v15a1 1 0 0 0 1 1h15"/><path d="M7 16l3.5-4 3 2.5L18 8"/></svg>
+          </div>
+          <span class="grid h-9 w-9 place-items-center rounded-full border border-ink/10 text-ink/40 transition-all group-hover:border-ink/30 group-hover:text-ink group-hover:-rotate-12">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </span>
+        </div>
+        <h3 class="mt-6 font-display text-xl font-semibold text-ink">Liquidación de Ganancias</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink/65">Liquidación precisa del Impuesto a las Ganancias para personas humanas, autónomos, monotributistas y sociedades.</p>
+        <ul class="mt-5 space-y-2">
+          <li class="flex items-start gap-2 text-sm text-ink/70"><span class="mt-2 h-1 w-1 rounded-full bg-brand-600"></span>Cálculo, presentación y pago</li>
+          <li class="flex items-start gap-2 text-sm text-ink/70"><span class="mt-2 h-1 w-1 rounded-full bg-brand-600"></span>Optimización legal de la base imponible</li>
+          <li class="flex items-start gap-2 text-sm text-ink/70"><span class="mt-2 h-1 w-1 rounded-full bg-brand-600"></span>Deducciones, retenciones y percepciones</li>
+        </ul>
+      </article>
+
+      <!-- card 4 -->
+      <article class="reveal group relative overflow-hidden rounded-3xl border border-ink/10 bg-white/70 p-7 backdrop-blur transition-all duration-500 hover:-translate-y-1 hover:border-brand-600/30 hover:shadow-premium">
+        <div class="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-brand-600/0 blur-2xl transition-all duration-700 group-hover:bg-brand-600/15"></div>
+        <div class="flex items-start justify-between">
+          <div class="grid h-14 w-14 place-items-center rounded-2xl text-cream shadow-premium ring-1 ring-white/20" style="background:linear-gradient(135deg,#08818a,#0f535a);">
+            <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l3 5-9 13L3 8l3-5Z"/><path d="M3 8h18"/></svg>
+          </div>
+          <span class="grid h-9 w-9 place-items-center rounded-full border border-ink/10 text-ink/40 transition-all group-hover:border-ink/30 group-hover:text-ink group-hover:-rotate-12">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </span>
+        </div>
+        <h3 class="mt-6 font-display text-xl font-semibold text-ink">Bienes Personales</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink/65">Valuación, presentación y pago del impuesto sobre los Bienes Personales con foco en compliance y optimización.</p>
+        <ul class="mt-5 space-y-2">
+          <li class="flex items-start gap-2 text-sm text-ink/70"><span class="mt-2 h-1 w-1 rounded-full bg-brand-600"></span>Valuación de bienes en el país y exterior</li>
+          <li class="flex items-start gap-2 text-sm text-ink/70"><span class="mt-2 h-1 w-1 rounded-full bg-brand-600"></span>Régimen de responsable sustituto</li>
+          <li class="flex items-start gap-2 text-sm text-ink/70"><span class="mt-2 h-1 w-1 rounded-full bg-brand-600"></span>Anticipos y planes de regularización</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== NOSOTROS ========== -->
+<section id="nosotros" class="relative py-24 sm:py-28">
+  <div class="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+    <div class="reveal flex flex-col gap-4 items-center text-center">
+      <span class="inline-flex items-center gap-2 rounded-full border border-brand-600/20 bg-brand-50/70 px-3.5 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.18em] text-brand-700">
+        <span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span> Nosotros
+      </span>
+      <h2 class="font-display display-md font-semibold text-ink text-balance">Un estudio contable <span class="gradient-text">cercano</span>, profesional y moderno</h2>
+      <p class="mx-auto max-w-2xl text-base text-ink/70 leading-relaxed text-balance">Somos un equipo apasionado por simplificar lo complejo. Acompañamos a personas, profesionales y PyMEs a llevar sus números con criterio.</p>
+    </div>
+
+    <div class="mt-14 grid items-start gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-7 reveal">
+        <p class="font-display text-2xl font-medium leading-snug text-ink text-balance">
+          Creemos que un buen contador no es el que solo presenta papeles. Es el que <span class="text-brand-700">entiende tu negocio</span>, te avisa antes y propone soluciones.
+        </p>
+        <div class="mt-6 space-y-5 text-[1.02rem] leading-relaxed text-ink/75">
+          <p>GICI nació para ofrecer un servicio contable e impositivo distinto: cercano como un estudio chico, riguroso como uno grande. Nuestro foco está en la atención personalizada y en hacer simple lo que para muchos es complejo.</p>
+          <p>Trabajamos con personas humanas, profesionales independientes, monotributistas, comercios y PyMEs. Cada cliente recibe un plan a medida y un único interlocutor responsable que conoce su caso de punta a punta.</p>
+          <p>Apostamos a la digitalización para que no pierdas tiempo: documentación, firmas y consultas se manejan online, con respaldo profesional y respuestas rápidas.</p>
+        </div>
+      </div>
+      <aside class="lg:col-span-5 reveal">
+        <div class="gradient-border relative overflow-hidden rounded-[28px] bg-gradient-to-br from-white/85 to-ivory/80 p-8 shadow-soft backdrop-blur">
+          <p class="text-[0.7rem] uppercase tracking-[0.2em] text-ink/55">Nuestro propósito</p>
+          <p class="mt-4 font-display text-xl font-medium leading-snug text-ink">Que cada cliente sienta tranquilidad y claridad con sus números, para enfocarse en lo que realmente importa: hacer crecer su proyecto.</p>
+          <div class="mt-8 grid grid-cols-2 gap-4 border-t border-ink/10 pt-6">
+            <div><p class="font-display text-3xl font-semibold text-ink">100%</p><p class="mt-1 text-xs text-ink/55">Trato directo</p></div>
+            <div><p class="font-display text-3xl font-semibold text-ink">0</p><p class="mt-1 text-xs text-ink/55">Letra chica</p></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Valores -->
+    <div class="mt-20 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- v1 -->
+      <div class="reveal group relative rounded-3xl border border-ink/10 bg-white/70 p-7 backdrop-blur transition-all hover:border-brand-600/30 hover:shadow-soft">
+        <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-brand-600/15 transition group-hover:bg-brand-600 group-hover:text-cream">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/><path d="m9 12 2 2 4-4"/></svg>
+        </span>
+        <h3 class="mt-5 font-display text-lg font-semibold text-ink">Confianza</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink/65">Construimos relaciones de largo plazo basadas en transparencia y resultados.</p>
+      </div>
+      <!-- v2 -->
+      <div class="reveal group relative rounded-3xl border border-ink/10 bg-white/70 p-7 backdrop-blur transition-all hover:border-brand-600/30 hover:shadow-soft">
+        <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-brand-600/15 transition group-hover:bg-brand-600 group-hover:text-cream">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17l-5-5 1.5-1.5L11 14l5.5-5.5L18 10z"/></svg>
+        </span>
+        <h3 class="mt-5 font-display text-lg font-semibold text-ink">Cercanía</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink/65">Te tratamos como cliente y como persona. Sin tecnicismos innecesarios.</p>
+      </div>
+      <!-- v3 -->
+      <div class="reveal group relative rounded-3xl border border-ink/10 bg-white/70 p-7 backdrop-blur transition-all hover:border-brand-600/30 hover:shadow-soft">
+        <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-brand-600/15 transition group-hover:bg-brand-600 group-hover:text-cream">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.9 5.8L20 9l-4.5 4 1.4 6L12 16l-4.9 3 1.4-6L4 9l6.1-1.2z"/></svg>
+        </span>
+        <h3 class="mt-5 font-display text-lg font-semibold text-ink">Excelencia</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink/65">Procesos prolijos, controles dobles y actualización profesional constante.</p>
+      </div>
+      <!-- v4 -->
+      <div class="reveal group relative rounded-3xl border border-ink/10 bg-white/70 p-7 backdrop-blur transition-all hover:border-brand-600/30 hover:shadow-soft">
+        <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-brand-600/15 transition group-hover:bg-brand-600 group-hover:text-cream">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15 9-3 6-3-3z"/></svg>
+        </span>
+        <h3 class="mt-5 font-display text-lg font-semibold text-ink">Claridad</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink/65">Te explicamos qué hacemos, por qué y cuál es el impacto en tus números.</p>
+      </div>
+      <!-- v5 -->
+      <div class="reveal group relative rounded-3xl border border-ink/10 bg-white/70 p-7 backdrop-blur transition-all hover:border-brand-600/30 hover:shadow-soft">
+        <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-brand-600/15 transition group-hover:bg-brand-600 group-hover:text-cream">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+        </span>
+        <h3 class="mt-5 font-display text-lg font-semibold text-ink">Anticipación</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink/65">Mirada estratégica: planificamos antes de que el problema aparezca.</p>
+      </div>
+      <!-- v6 -->
+      <div class="reveal group relative rounded-3xl border border-ink/10 bg-white/70 p-7 backdrop-blur transition-all hover:border-brand-600/30 hover:shadow-soft">
+        <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-brand-600/15 transition group-hover:bg-brand-600 group-hover:text-cream">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        </span>
+        <h3 class="mt-5 font-display text-lg font-semibold text-ink">Confidencialidad</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink/65">Protocolos estrictos para resguardar tu información sensible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIOS ========== -->
+<section class="relative py-24 sm:py-28">
+  <div class="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+    <div class="reveal flex flex-col gap-4 items-center text-center">
+      <span class="inline-flex items-center gap-2 rounded-full border border-brand-600/20 bg-brand-50/70 px-3.5 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.18em] text-brand-700"><span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span> Clientes</span>
+      <h2 class="font-display display-md font-semibold text-ink text-balance">Lo que dicen quienes <span class="gradient-text">ya trabajan</span> con nosotros</h2>
+    </div>
+
+    <div class="mt-14 grid gap-5 md:grid-cols-3">
+      <figure class="reveal relative flex h-full flex-col rounded-3xl border border-ink/10 bg-white/75 p-7 backdrop-blur shadow-soft">
+        <div class="flex items-center gap-1 text-brand-600">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.6 4 2.1 7L12 16l-6.5 4 2.1-7L2 9h7z"/></svg>
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.6 4 2.1 7L12 16l-6.5 4 2.1-7L2 9h7z"/></svg>
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.6 4 2.1 7L12 16l-6.5 4 2.1-7L2 9h7z"/></svg>
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.6 4 2.1 7L12 16l-6.5 4 2.1-7L2 9h7z"/></svg>
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.6 4 2.1 7L12 16l-6.5 4 2.1-7L2 9h7z"/></svg>
+        </div>
+        <blockquote class="mt-5 flex-1 text-[0.95rem] leading-relaxed text-ink/80">"Trabajar con GICI cambió la manera en la que llevamos la administración. Anticipan, explican y proponen. Una tranquilidad enorme."</blockquote>
+        <figcaption class="mt-7 flex items-center gap-3 border-t border-ink/10 pt-5">
+          <span class="grid h-10 w-10 place-items-center rounded-full text-cream font-display text-sm font-semibold" style="background:linear-gradient(135deg,#08818a,#0f535a);">M</span>
+          <div><p class="text-sm font-semibold text-ink">M. Fernández</p><p class="text-xs text-ink/55">Directora · PyME industrial</p></div>
+        </figcaption>
+      </figure>
+      <figure class="reveal relative flex h-full flex-col rounded-3xl border border-ink/10 bg-white/75 p-7 backdrop-blur shadow-soft">
+        <div class="flex items-center gap-1 text-brand-600">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.6 4 2.1 7L12 16l-6.5 4 2.1-7L2 9h7z"/></svg>
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.6 4 2.1 7L12 16l-6.5 4 2.1-7L2 9h7z"/></svg>
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.6 4 2.1 7L12 16l-6.5 4 2.1-7L2 9h7z"/></svg>
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.6 4 2.1 7L12 16l-6.5 4 2.1-7L2 9h7z"/></svg>
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.6 4 2.1 7L12 16l-6.5 4 2.1-7L2 9h7z"/></svg>
+        </div>
+        <blockquote class="mt-5 flex-1 text-[0.95rem] leading-relaxed text-ink/80">"Siempre tuve miedo a los temas impositivos. Hoy entiendo mi situación y sé que están un paso adelante mío. Excelentes profesionales."</blockquote>
+        <figcaption class="mt-7 flex items-center gap-3 border-t border-ink/10 pt-5">
+          <span class="grid h-10 w-10 place-items-center rounded-full text-cream font-display text-sm font-semibold" style="background:linear-gradient(135deg,#08818a,#0f535a);">J</span>
+          <div><p class="text-sm font-semibold text-ink">J. Rodríguez</p><p class="text-xs text-ink/55">Profesional independiente</p></div>
+        </figcaption>
+      </figure>
+      <figure class="reveal relative flex h-full flex-col rounded-3xl border border-ink/10 bg-white/75 p-7 backdrop-blur shadow-soft">
+        <div class="flex items-center gap-1 text-brand-600">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.6 4 2.1 7L12 16l-6.5 4 2.1-7L2 9h7z"/></svg>
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.6 4 2.1 7L12 16l-6.5 4 2.1-7L2 9h7z"/></svg>
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.6 4 2.1 7L12 16l-6.5 4 2.1-7L2 9h7z"/></svg>
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.6 4 2.1 7L12 16l-6.5 4 2.1-7L2 9h7z"/></svg>
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.6 4 2.1 7L12 16l-6.5 4 2.1-7L2 9h7z"/></svg>
+        </div>
+        <blockquote class="mt-5 flex-1 text-[0.95rem] leading-relaxed text-ink/80">"Atención cercana, respuestas claras y procesos prolijos. Recomiendo GICI a cualquier emprendedor que quiera ordenarse de verdad."</blockquote>
+        <figcaption class="mt-7 flex items-center gap-3 border-t border-ink/10 pt-5">
+          <span class="grid h-10 w-10 place-items-center rounded-full text-cream font-display text-sm font-semibold" style="background:linear-gradient(135deg,#08818a,#0f535a);">C</span>
+          <div><p class="text-sm font-semibold text-ink">C. Pereyra</p><p class="text-xs text-ink/55">Comercio · Ituzaingó</p></div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACTO ========== -->
+<section id="contacto" class="relative py-24 sm:py-28">
+  <div class="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+    <div class="reveal flex flex-col gap-4 items-center text-center">
+      <span class="inline-flex items-center gap-2 rounded-full border border-brand-600/20 bg-brand-50/70 px-3.5 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.18em] text-brand-700"><span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span> Contacto</span>
+      <h2 class="font-display display-md font-semibold text-ink text-balance">Hablemos. Te respondemos en <span class="gradient-text">menos de 24 hs</span></h2>
+      <p class="mx-auto max-w-2xl text-base text-ink/70 leading-relaxed text-balance">Coordiná una primera reunión sin cargo o consultanos por el canal que prefieras.</p>
+    </div>
+
+    <div class="mt-14 grid items-start gap-8 lg:grid-cols-12">
+      <!-- Form -->
+      <form id="contactForm" class="lg:col-span-7 gradient-border relative overflow-hidden rounded-3xl bg-white/80 p-7 sm:p-9 shadow-premium backdrop-blur reveal">
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+          <div>
+            <label class="text-[0.8rem] font-medium text-ink/70" for="f-nombre">Nombre <span class="text-brand-600">*</span></label>
+            <input id="f-nombre" name="nombre" required class="mt-2 block w-full rounded-2xl border border-ink/10 bg-white/80 px-4 py-3.5 text-[0.95rem] outline-none transition focus:border-brand-600/50 focus:ring-4 focus:ring-brand-600/15" />
+          </div>
+          <div>
+            <label class="text-[0.8rem] font-medium text-ink/70" for="f-empresa">Empresa</label>
+            <input id="f-empresa" name="empresa" class="mt-2 block w-full rounded-2xl border border-ink/10 bg-white/80 px-4 py-3.5 text-[0.95rem] outline-none transition focus:border-brand-600/50 focus:ring-4 focus:ring-brand-600/15" />
+          </div>
+          <div>
+            <label class="text-[0.8rem] font-medium text-ink/70" for="f-email">Email <span class="text-brand-600">*</span></label>
+            <input type="email" id="f-email" name="email" required class="mt-2 block w-full rounded-2xl border border-ink/10 bg-white/80 px-4 py-3.5 text-[0.95rem] outline-none transition focus:border-brand-600/50 focus:ring-4 focus:ring-brand-600/15" />
+          </div>
+          <div>
+            <label class="text-[0.8rem] font-medium text-ink/70" for="f-tel">Teléfono</label>
+            <input type="tel" id="f-tel" name="telefono" class="mt-2 block w-full rounded-2xl border border-ink/10 bg-white/80 px-4 py-3.5 text-[0.95rem] outline-none transition focus:border-brand-600/50 focus:ring-4 focus:ring-brand-600/15" />
+          </div>
+          <div class="sm:col-span-2">
+            <label class="text-[0.8rem] font-medium text-ink/70" for="f-consulta">Consulta <span class="text-brand-600">*</span></label>
+            <textarea id="f-consulta" name="consulta" required rows="5" placeholder="Contanos brevemente tu situación o consulta…" class="mt-2 block w-full rounded-2xl border border-ink/10 bg-white/80 px-4 py-3.5 text-[0.95rem] outline-none transition focus:border-brand-600/50 focus:ring-4 focus:ring-brand-600/15 min-h-[140px] resize-y"></textarea>
+          </div>
+        </div>
+        <div class="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p class="text-xs text-ink/55">Al enviar aceptás nuestra política de privacidad. Te respondemos en menos de 24 hs hábiles.</p>
+          <button type="submit" class="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-ink px-6 text-[0.95rem] font-medium text-cream shadow-premium hover:bg-ink/90 hover:-translate-y-[1px] transition-all">
+            Enviar consulta
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4 20-7Z"/></svg>
+          </button>
+        </div>
+        <div id="formSuccess" class="hidden mt-5 flex items-start gap-3 rounded-2xl border border-brand-600/20 bg-brand-50 p-4 text-sm text-brand-800">
+          <svg class="mt-0.5 h-5 w-5 flex-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+          <p>¡Listo! Abrimos WhatsApp con tu consulta para que la envíes directamente.</p>
+        </div>
+      </form>
+
+      <!-- Canales -->
+      <aside class="lg:col-span-5 reveal">
+        <div class="rounded-3xl border border-ink/10 bg-white/75 p-7 backdrop-blur shadow-soft">
+          <h3 class="font-display text-lg font-semibold text-ink">Canales directos</h3>
+          <p class="mt-2 text-sm text-ink/65">Elegí el canal que te resulte más cómodo. Atendemos personalmente cada consulta.</p>
+          <ul class="mt-6 space-y-3 text-sm">
+            <li>
+              <a href="https://wa.me/541154956931" target="_blank" rel="noopener" class="group flex items-center justify-between rounded-2xl border border-ink/10 bg-white/80 px-4 py-3.5 transition hover:border-brand-600/30 hover:shadow-soft">
+                <span class="flex items-center gap-3">
+                  <span class="grid h-9 w-9 place-items-center rounded-xl bg-[#25D366]/10 text-[#1f8b4a] ring-1 ring-[#25D366]/25">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19.1 17.3c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.1-.4-2.2-1.3-.8-.7-1.3-1.6-1.5-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2.1-.3 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.5-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 1.9 3 4.7 4.1.7.3 1.2.5 1.6.6.7.2 1.3.2 1.7.1.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3M16 5.3c-5.9 0-10.7 4.8-10.7 10.7 0 1.9.5 3.7 1.4 5.3l-1.5 5.4 5.5-1.4c1.6.9 3.3 1.3 5.2 1.3 5.9 0 10.7-4.8 10.7-10.7-.1-5.8-4.8-10.6-10.6-10.6"/></svg>
+                  </span>
+                  <span><p class="font-medium text-ink">WhatsApp</p><p class="text-xs text-ink/55">Respuesta inmediata · Lun a Vie</p></span>
+                </span>
+                <span class="text-xs font-medium text-brand-700">Abrir →</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+541154956931" class="group flex items-center justify-between rounded-2xl border border-ink/10 bg-white/80 px-4 py-3.5 transition hover:border-brand-600/30 hover:shadow-soft">
+                <span class="flex items-center gap-3">
+                  <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-brand-600/15">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1.13.34 2.24.64 3.31a2 2 0 0 1-.45 2.11L8.09 10.4a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.07.3 2.18.51 3.31.64a2 2 0 0 1 1.72 2z"/></svg>
+                  </span>
+                  <span><p class="font-medium text-ink">+54 11 5495-6931</p><p class="text-xs text-ink/55">Teléfono y WhatsApp</p></span>
+                </span>
+                <span class="text-xs font-medium text-brand-700">Llamar →</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contacto@gici.com.ar" class="group flex items-center justify-between rounded-2xl border border-ink/10 bg-white/80 px-4 py-3.5 transition hover:border-brand-600/30 hover:shadow-soft">
+                <span class="flex items-center gap-3">
+                  <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-brand-600/15">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                  </span>
+                  <span><p class="font-medium text-ink">contacto@gici.com.ar</p><p class="text-xs text-ink/55">Para consultas y documentación</p></span>
+                </span>
+                <span class="text-xs font-medium text-brand-700">Escribir →</span>
+              </a>
+            </li>
+            <li>
+              <div class="flex items-start justify-between gap-3 rounded-2xl border border-ink/10 bg-white/80 px-4 py-3.5">
+                <span class="flex items-start gap-3">
+                  <span class="mt-0.5 grid h-9 w-9 place-items-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-brand-600/15">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </span>
+                  <span><p class="font-medium text-ink">Gral. Las Heras 350</p><p class="text-xs text-ink/55">B1714 Ituzaingó, Buenos Aires</p></span>
+                </span>
+              </div>
+            </li>
+            <li>
+              <div class="flex items-center justify-between rounded-2xl border border-ink/10 bg-white/80 px-4 py-3.5">
+                <span class="flex items-center gap-3">
+                  <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-brand-600/15">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                  </span>
+                  <span><p class="font-medium text-ink">Lun a Vie · 9:00 – 18:00</p><p class="text-xs text-ink/55">Reuniones con cita previa</p></span>
+                </span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Mapa -->
+    <div class="mt-12 reveal overflow-hidden rounded-3xl border border-ink/10 bg-white/70 shadow-soft">
+      <div class="aspect-[4/3] w-full sm:aspect-[16/8]">
+        <iframe title="Ubicación de GICI en Ituzaingó"
+          src="https://www.google.com/maps?q=Gral.+Las+Heras+350%2C+B1714+Ituzaing%C3%B3%2C+Provincia+de+Buenos+Aires&output=embed"
+          class="h-full w-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="filter:grayscale(20%) contrast(1.05);"></iframe>
+      </div>
+      <div class="flex items-center justify-between gap-4 border-t border-ink/10 bg-white/80 p-5 backdrop-blur">
+        <div class="flex items-start gap-3">
+          <span class="grid h-10 w-10 place-items-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-brand-600/15">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <div><p class="text-sm font-semibold text-ink">Estudio GICI</p><p class="text-xs text-ink/60">Gral. Las Heras 350 · B1714 Ituzaingó, Buenos Aires</p></div>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Gral.+Las+Heras+350%2C+B1714+Ituzaing%C3%B3%2C+Provincia+de+Buenos+Aires" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-white px-3.5 py-2 text-xs font-medium text-ink/80 hover:border-ink/30 hover:text-ink transition">Cómo llegar →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA FINAL ========== -->
+<section class="relative py-24 sm:py-28">
+  <div class="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+    <div class="reveal relative isolate overflow-hidden rounded-[36px] px-8 py-16 text-cream shadow-premium sm:px-14 sm:py-20" style="background:linear-gradient(135deg,#0b6770,#08818a 50%,#0f535a);">
+      <div class="pointer-events-none absolute inset-0 opacity-30" style="background-image:linear-gradient(to right, rgba(255,255,255,.18) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.18) 1px, transparent 1px); background-size:48px 48px; -webkit-mask-image:radial-gradient(ellipse 70% 70% at 50% 50%, #000 30%, transparent 80%); mask-image:radial-gradient(ellipse 70% 70% at 50% 50%, #000 30%, transparent 80%);"></div>
+      <div class="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-white/15 blur-3xl"></div>
+      <div class="pointer-events-none absolute -left-16 -bottom-24 h-72 w-72 rounded-full bg-ink/30 blur-3xl"></div>
+
+      <div class="relative grid items-center gap-10 lg:grid-cols-12">
+        <div class="lg:col-span-8">
+          <p class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1.5 text-[0.7rem] font-medium uppercase tracking-[0.2em] text-cream/85 ring-1 ring-white/15">
+            <span class="h-1.5 w-1.5 rounded-full bg-cream"></span> Hablemos
+          </p>
+          <h2 class="mt-5 font-display display-lg font-semibold text-balance">
+            Ordená tu situación contable hoy. <span class="text-cream/70">Sin vueltas. Sin sorpresas.</span>
+          </h2>
+          <p class="mt-5 max-w-xl text-cream/80">Coordiná una reunión sin cargo. Analizamos tu caso y te damos un plan claro en menos de 48 horas.</p>
+        </div>
+        <div class="flex flex-col items-stretch gap-3 lg:col-span-4 lg:items-end">
+          <a href="#contacto" class="group inline-flex h-14 items-center justify-center gap-2 rounded-full bg-cream px-8 text-base font-medium text-ink hover:bg-white transition-all w-full lg:w-auto">
+            Pedir reunión
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://wa.me/541154956931" target="_blank" rel="noopener" class="inline-flex h-14 items-center justify-center gap-2 rounded-full border border-white/30 px-8 text-base font-medium text-cream hover:bg-white/10 hover:border-white/60 transition-all w-full lg:w-auto">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19.1 17.3c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.1-.4-2.2-1.3-.8-.7-1.3-1.6-1.5-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2.1-.3 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.5-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 1.9 3 4.7 4.1.7.3 1.2.5 1.6.6.7.2 1.3.2 1.7.1.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3M16 5.3c-5.9 0-10.7 4.8-10.7 10.7 0 1.9.5 3.7 1.4 5.3l-1.5 5.4 5.5-1.4c1.6.9 3.3 1.3 5.2 1.3 5.9 0 10.7-4.8 10.7-10.7-.1-5.8-4.8-10.6-10.6-10.6"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="relative mt-12 overflow-hidden bg-ink text-cream">
+  <div class="pointer-events-none absolute inset-0 opacity-60">
+    <div class="absolute -left-32 top-0 h-96 w-96 rounded-full bg-brand-600/20 blur-3xl"></div>
+    <div class="absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-brand-400/10 blur-3xl"></div>
+  </div>
+  <div class="relative mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+    <div class="grid gap-12 py-20 md:grid-cols-12">
+      <div class="md:col-span-5">
+        <a href="#inicio" class="inline-flex items-center gap-3">
+          <span class="grid h-10 w-10 place-items-center overflow-hidden rounded-2xl bg-white/10 ring-1 ring-white/15">
+            <img src="/assets/images/logo.png" alt="GICI" class="h-full w-full object-contain p-1" />
+          </span>
+          <span class="flex flex-col leading-none text-cream">
+            <span class="font-display text-[1.15rem] font-semibold tracking-tight">GICI<span class="text-brand-300">.</span></span>
+            <span class="text-[0.6rem] uppercase tracking-[0.22em] mt-1 text-cream/65">Contable · Impositivo</span>
+          </span>
+        </a>
+        <p class="mt-6 max-w-sm text-sm leading-relaxed text-cream/70">
+          Estudio contable en Ituzaingó. Soluciones integrales en materia impositiva, laboral y comercial para personas y empresas que quieren crecer ordenadas.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 text-sm">
+          <a href="tel:+541154956931" class="group inline-flex items-center gap-3 text-cream/80 hover:text-cream transition">
+            <span class="grid h-9 w-9 place-items-center rounded-full bg-cream/5 ring-1 ring-cream/10 group-hover:bg-cream/10">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1.13.34 2.24.64 3.31a2 2 0 0 1-.45 2.11L8.09 10.4a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.07.3 2.18.51 3.31.64a2 2 0 0 1 1.72 2z"/></svg>
+            </span>
+            +54 11 5495-6931
+          </a>
+          <a href="mailto:contacto@gici.com.ar" class="group inline-flex items-center gap-3 text-cream/80 hover:text-cream transition">
+            <span class="grid h-9 w-9 place-items-center rounded-full bg-cream/5 ring-1 ring-cream/10 group-hover:bg-cream/10">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            </span>
+            contacto@gici.com.ar
+          </a>
+          <span class="inline-flex items-start gap-3 text-cream/80">
+            <span class="mt-0.5 grid h-9 w-9 place-items-center rounded-full bg-cream/5 ring-1 ring-cream/10">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <span>Gral. Las Heras 350<br />B1714 Ituzaingó, Buenos Aires</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="md:col-span-3">
+        <h3 class="font-display text-sm font-semibold uppercase tracking-[0.18em] text-cream/60">Navegación</h3>
+        <ul class="mt-5 space-y-3 text-sm">
+          <li><a href="#inicio" class="text-cream/80 hover:text-cream">Inicio</a></li>
+          <li><a href="#servicios" class="text-cream/80 hover:text-cream">Servicios</a></li>
+          <li><a href="#nosotros" class="text-cream/80 hover:text-cream">Nosotros</a></li>
+          <li><a href="#contacto" class="text-cream/80 hover:text-cream">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-4">
+        <h3 class="font-display text-sm font-semibold uppercase tracking-[0.18em] text-cream/60">Hablemos</h3>
+        <p class="mt-5 text-sm leading-relaxed text-cream/70">Te respondemos en menos de 24 horas hábiles. Contanos tu caso y te asesoramos sin compromiso.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="https://wa.me/541154956931" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-brand-600 px-5 py-2.5 text-sm font-medium text-cream hover:bg-brand-500 transition">WhatsApp →</a>
+          <a href="#contacto" class="inline-flex items-center gap-2 rounded-full border border-cream/15 px-5 py-2.5 text-sm font-medium text-cream/90 hover:bg-cream/5 transition">Formulario →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-start justify-between gap-4 border-t border-cream/10 py-8 text-xs text-cream/50 md:flex-row md:items-center">
+      <p>© <span id="year"></span> GICI — Gestión Integral Contable e Impositiva. Todos los derechos reservados.</p>
+      <p class="font-display tracking-wide">Diseñado con criterio. Construido con cuidado.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== WHATSAPP FLOTANTE ========== -->
+<a id="wa" href="https://wa.me/541154956931?text=Hola%20GICI%2C%20quisiera%20hacer%20una%20consulta%20sobre%20sus%20servicios." target="_blank" rel="noopener"
+   class="opacity-0 pointer-events-none translate-y-4 group fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full text-white sm:bottom-7 sm:right-7 transition-all duration-300 hover:scale-105"
+   style="background:#25D366; box-shadow:0 18px 40px -12px rgba(37,211,102,0.55); --tw-ring-color:rgba(255,255,255,.3);"
+   aria-label="Escribir por WhatsApp">
+  <span class="absolute inset-0 -z-10 rounded-full pulse-ring" style="background:rgba(37,211,102,.6);"></span>
+  <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
+    <path fill="currentColor" d="M19.11 17.27c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.33-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.41.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.85.14.18 1.93 2.95 4.68 4.13.65.28 1.16.45 1.56.57.66.21 1.25.18 1.72.11.52-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32zM16.02 5.33c-5.88 0-10.66 4.78-10.66 10.66 0 1.88.49 3.73 1.43 5.34L5.33 26.67l5.47-1.43a10.66 10.66 0 0 0 5.22 1.34h.01c5.88 0 10.66-4.78 10.66-10.66 0-2.85-1.11-5.52-3.12-7.53a10.59 10.59 0 0 0-7.55-3.06zm6.18 16.83a8.83 8.83 0 0 1-6.18 2.55h-.01a8.84 8.84 0 0 1-4.51-1.24l-.32-.19-3.24.85.86-3.16-.21-.33a8.83 8.83 0 0 1-1.36-4.71c0-4.88 3.97-8.85 8.85-8.85 2.37 0 4.59.92 6.26 2.59a8.78 8.78 0 0 1 2.59 6.27c0 4.88-3.97 8.85-8.85 8.85z"/>
+  </svg>
+</a>
+
+<!-- ========== JSON-LD ========== -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"AccountingService",
+  "name":"GICI — Gestión Integral Contable e Impositiva",
+  "telephone":"+54 11 5495-6931",
+  "address":{"@type":"PostalAddress","streetAddress":"Gral. Las Heras 350","addressLocality":"Ituzaingó","addressRegion":"Buenos Aires","postalCode":"B1714","addressCountry":"Argentina"},
+  "geo":{"@type":"GeoCoordinates","latitude":-34.6552,"longitude":-58.6708},
+  "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"}],
+  "areaServed":"Ituzaingó, Buenos Aires, Argentina",
+  "priceRange":"$$"
+}
+</script>
+
+<!-- ========== JS ========== -->
+<script>
+  // Navbar scroll glass
+  const nav = document.getElementById('nav');
+  const navbar = document.getElementById('navbar');
+  const wa = document.getElementById('wa');
+  function onScroll() {
+    const s = window.scrollY > 16;
+    nav.classList.toggle('pt-2', s);
+    nav.classList.toggle('pt-4', !s);
+    if (s) { navbar.classList.add('glass','shadow-soft','h-14'); navbar.classList.remove('h-16'); }
+    else { navbar.classList.remove('glass','shadow-soft','h-14'); navbar.classList.add('h-16'); }
+    const v = window.scrollY > 240;
+    if (v) { wa.classList.remove('opacity-0','pointer-events-none','translate-y-4'); wa.classList.add('opacity-100','translate-y-0'); }
+    else { wa.classList.add('opacity-0','pointer-events-none','translate-y-4'); wa.classList.remove('opacity-100','translate-y-0'); }
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  // Mobile menu
+  const mobile = document.getElementById('mobile');
+  const iconMenu = document.getElementById('iconMenu');
+  const iconClose = document.getElementById('iconClose');
+  function toggleMenu() {
+    const open = mobile.classList.toggle('hidden') === false;
+    iconMenu.classList.toggle('hidden', open);
+    iconClose.classList.toggle('hidden', !open);
+    document.documentElement.style.overflow = open ? 'hidden' : '';
+  }
+  document.getElementById('navToggle').addEventListener('click', toggleMenu);
+  window.toggleMenu = toggleMenu;
+
+  // Active nav link
+  const links = document.querySelectorAll('#navList .nav-link');
+  const sections = ['inicio','servicios','nosotros','contacto'].map(id => document.getElementById(id));
+  function setActive() {
+    let current = 'inicio';
+    const y = window.scrollY + 120;
+    sections.forEach(s => { if (s && s.offsetTop <= y) current = s.id; });
+    links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+  }
+  window.addEventListener('scroll', setActive, { passive:true });
+  setActive();
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .12 });
+  document.querySelectorAll('.reveal:not(.in)').forEach(el => io.observe(el));
+
+  // Animated counters
+  const counters = document.querySelectorAll('[data-count]');
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.count, 10);
+      const suffix = el.dataset.suffix || '';
+      const dur = 1600;
+      const start = performance.now();
+      function tick(now) {
+        const t = Math.min(1, (now - start) / dur);
+        const eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = Math.round(target * eased).toLocaleString('es-AR') + suffix;
+        if (t < 1) requestAnimationFrame(tick);
+        else el.textContent = target.toLocaleString('es-AR') + suffix;
+      }
+      requestAnimationFrame(tick);
+      counterIO.unobserve(el);
+    });
+  }, { threshold: .5 });
+  counters.forEach(c => counterIO.observe(c));
+
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Contact form -> WhatsApp fallback
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(this).entries());
+    const message = `Hola, soy ${data.nombre || ''}${data.empresa ? ' (' + data.empresa + ')' : ''}. ${data.consulta || ''}\n\nEmail: ${data.email || ''}\nTel: ${data.telefono || ''}`;
+    const url = 'https://wa.me/541154956931?text=' + encodeURIComponent(message);
+    window.open(url, '_blank', 'noopener,noreferrer');
+    document.getElementById('formSuccess').classList.remove('hidden');
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
