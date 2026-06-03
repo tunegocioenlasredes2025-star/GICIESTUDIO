@@ -1,0 +1,25 @@
+# robots.txt — GICI · Estudio Contable en Ituzaingó
+# https://estudiocontablegici.com/
+
+User-agent: *
+Allow: /
+Disallow: /_vercel/
+
+# Bloqueamos paths internos de Vercel
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Bots de IA generativa — permitidos (perfil informativo, no contenido sensible)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://estudiocontablegici.com/sitemap.xml

@@ -1,0 +1,26 @@
+{
+  "name": "GICI — Estudio Contable en Ituzaingó",
+  "short_name": "GICI",
+  "description": "Estudio contable en Ituzaingó. Asesoramiento impositivo, laboral y comercial.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fbfaf8",
+  "theme_color": "#08818a",
+  "lang": "es-AR",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
