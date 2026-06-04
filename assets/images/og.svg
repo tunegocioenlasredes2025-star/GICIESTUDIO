@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbfaf8"/>
+      <stop offset="60%" stop-color="#f4f1ee"/>
+      <stop offset="100%" stop-color="#ebe7e5"/>
+    </linearGradient>
+    <radialGradient id="brandGlow" cx="0.85" cy="0.15" r="0.7">
+      <stop offset="0%" stop-color="#08818a" stop-opacity="0.28"/>
+      <stop offset="50%" stop-color="#42b6c0" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#08818a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="darkGlow" cx="0.1" cy="0.9" r="0.6">
+      <stop offset="0%" stop-color="#1b110c" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#1b110c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="brand" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#08818a"/>
+      <stop offset="100%" stop-color="#0b6770"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#08818a"/>
+      <stop offset="55%" stop-color="#42b6c0"/>
+      <stop offset="100%" stop-color="#1b110c"/>
+    </linearGradient>
+    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M 56 0 L 0 0 0 56" fill="none" stroke="rgba(8,129,138,0.07)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- bg layers -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#brandGlow)"/>
+  <rect width="1200" height="630" fill="url(#darkGlow)"/>
+
+  <!-- icono GICI grande arriba a la derecha -->
+  <g transform="translate(880, 110)">
+    <rect width="220" height="220" rx="44" fill="url(#brand)"/>
+    <rect width="220" height="220" rx="44" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+    <!-- G estilizada -->
+    <g transform="translate(48, 48)" stroke="#ffffff" stroke-width="14" stroke-linecap="round" fill="none">
+      <path d="M 100 28 a 56 56 0 1 0 0 68"/>
+      <path d="M 100 62 h -32"/>
+    </g>
+    <circle cx="160" cy="158" r="9" fill="#ffffff"/>
+  </g>
+
+  <!-- chip -->
+  <g transform="translate(80, 100)">
+    <rect width="320" height="44" rx="22" fill="rgba(8,129,138,0.10)" stroke="rgba(8,129,138,0.35)" stroke-width="1"/>
+    <circle cx="22" cy="22" r="4" fill="#08818a"/>
+    <text x="40" y="29" fill="#0b6770" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" letter-spacing="3">ESTUDIO CONTABLE · ITUZAINGÓ</text>
+  </g>
+
+  <!-- title -->
+  <text x="80" y="240" fill="#1b110c" font-family="Sora, Inter, system-ui, sans-serif" font-size="84" font-weight="700" letter-spacing="-2">
+    Soluciones contables
+  </text>
+  <text x="80" y="332" font-family="Sora, Inter, system-ui, sans-serif" font-size="84" font-weight="700" letter-spacing="-2">
+    <tspan fill="url(#textGrad)">e impositivas</tspan><tspan fill="#1b110c"> para</tspan>
+  </text>
+  <text x="80" y="424" fill="#1b110c" font-family="Sora, Inter, system-ui, sans-serif" font-size="84" font-weight="700" letter-spacing="-2">
+    personas y empresas.
+  </text>
+
+  <!-- footer bar -->
+  <line x1="80" y1="510" x2="700" y2="510" stroke="#08818a" stroke-width="2" opacity="0.5"/>
+
+  <!-- brand line -->
+  <text x="80" y="552" fill="#08818a" font-family="Sora, Inter, system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="-0.5">
+    GICI<tspan fill="#1b110c">.</tspan>
+    <tspan fill="#1b110c" font-weight="400" font-size="20" dx="14">Gestión Integral Contable e Impositiva</tspan>
+  </text>
+  <text x="80" y="582" fill="#665e5c" font-family="Inter, system-ui, sans-serif" font-size="17">
+    estudiocontablegici.com · +54 11 5495-6931 · Gral. Las Heras 350
+  </text>
+</svg>
