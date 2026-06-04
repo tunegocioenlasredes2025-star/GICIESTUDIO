@@ -14,12 +14,12 @@ $services = @(
     title = "Asesoramiento Impositivo y Laboral"
     h1 = "Asesoramiento impositivo y laboral en Ituzaingo"
     h1Url = "Asesoramiento%20impositivo%20y%20laboral"
-    subtitle = "Cumplimiento fiscal y laboral integral para que tu empresa opere con tranquilidad ante AFIP, ARBA y los organismos provinciales. Te avisamos cada vencimiento y nos ocupamos de todo."
-    metaDesc = "Asesoramiento impositivo y laboral en Ituzaingo. Liquidacion de impuestos, sueldos, cargas sociales, inscripciones AFIP/ARBA y defensa ante inspecciones."
-    keywords = "asesoramiento impositivo Ituzaingo, asesoramiento laboral Ituzaingo, contador AFIP, liquidacion de sueldos, cargas sociales, inscripciones AFIP ARBA, contador para PyMEs"
+    subtitle = "Cumplimiento fiscal y laboral integral para que tu empresa opere con tranquilidad ante ARCA, ARBA y los organismos provinciales. Te avisamos cada vencimiento y nos ocupamos de todo."
+    metaDesc = "Asesoramiento impositivo y laboral en Ituzaingo. Liquidacion de impuestos, sueldos, cargas sociales, inscripciones ARCA/ARBA y defensa ante inspecciones."
+    keywords = "asesoramiento impositivo Ituzaingo, asesoramiento laboral Ituzaingo, contador ARCA, liquidacion de sueldos, cargas sociales, inscripciones ARCA ARBA, contador para PyMEs"
     longDescription = @'
 <p>Llevamos el cumplimiento impositivo y laboral de tu empresa o actividad de punta a punta. Trabajamos con personas humanas, monotributistas, autonomos, sociedades, PyMEs y comercios &mdash; adaptando el servicio a la escala y al sector de cada cliente.</p>
-<p>El objetivo es simple: que vos te dediques a lo que mejor sabes hacer y nosotros nos ocupemos de los impuestos, los sueldos y la relacion con AFIP, ARBA y los organismos provinciales. Te avisamos con tiempo los vencimientos, presentamos en termino y te explicamos que se hizo y por que.</p>
+<p>El objetivo es simple: que vos te dediques a lo que mejor sabes hacer y nosotros nos ocupemos de los impuestos, los sueldos y la relacion con ARCA, ARBA y los organismos provinciales. Te avisamos con tiempo los vencimientos, presentamos en termino y te explicamos que se hizo y por que.</p>
 <h3 class="font-display text-xl font-semibold text-ink mt-6 mb-3">Como trabajamos</h3>
 <p>Despues de una primera reunion sin cargo, te enviamos un plan de trabajo con los servicios concretos, la frecuencia y los honorarios. Si decidis avanzar, asignamos un profesional responsable que va a ser tu interlocutor unico. Toda la documentacion se gestiona de forma digital y respondemos consultas por WhatsApp, email o telefono en menos de 24 horas habiles.</p>
 <h3 class="font-display text-xl font-semibold text-ink mt-6 mb-3">Por que tercerizar este servicio</h3>
@@ -28,7 +28,7 @@ $services = @(
     bullets = @(
       "Liquidacion de IVA, Ganancias e Ingresos Brutos",
       "Liquidacion mensual de sueldos y cargas sociales",
-      "Inscripciones AFIP, ARBA y altas tempranas",
+      "Inscripciones ARCA, ARBA y altas tempranas",
       "Recategorizaciones de Monotributo",
       "Defensa ante inspecciones y fiscalizaciones",
       "Convenios de pago y planes de regularizacion",
@@ -115,14 +115,14 @@ $services = @(
     h1Url = "Bienes%20Personales"
     subtitle = "Valuacion, presentacion y pago del impuesto sobre los Bienes Personales con foco en compliance y optimizacion dentro del marco legal vigente."
     metaDesc = "Liquidacion de Bienes Personales en Ituzaingo. Valuacion de bienes en el pais y exterior, regimen de responsable sustituto, anticipos y planes de pago."
-    keywords = "Bienes Personales Ituzaingo, liquidacion Bienes Personales, valuacion bienes exterior, responsable sustituto, anticipos Bienes Personales, plan de pago AFIP"
+    keywords = "Bienes Personales Ituzaingo, liquidacion Bienes Personales, valuacion bienes exterior, responsable sustituto, anticipos Bienes Personales, plan de pago ARCA"
     longDescription = @'
-<p>El Impuesto sobre los Bienes Personales grava el patrimonio de personas humanas y sucesiones indivisas al 31 de diciembre de cada ano. La determinacion correcta requiere valuar todos los bienes (inmuebles, automotores, depositos, inversiones, participaciones societarias) segun las reglas especificas que dicta la AFIP, que cambian anualmente.</p>
+<p>El Impuesto sobre los Bienes Personales grava el patrimonio de personas humanas y sucesiones indivisas al 31 de diciembre de cada ano. La determinacion correcta requiere valuar todos los bienes (inmuebles, automotores, depositos, inversiones, participaciones societarias) segun las reglas especificas que dicta la ARCA, que cambian anualmente.</p>
 <p>Liquidamos Bienes Personales para residentes argentinos con bienes en el pais y/o en el exterior, evaluando en cada caso la conveniencia de aplicar la alicuota agravada para bienes en el exterior o repatriar parcialmente para acceder a la alicuota reducida.</p>
 <h3 class="font-display text-xl font-semibold text-ink mt-6 mb-3">Regimen de responsable sustituto</h3>
 <p>Si tenes acciones o participaciones en una SA, SRL o SAS, ese impuesto lo paga la sociedad como responsable sustituto. Nos ocupamos de calcularlo, presentarlo y pagarlo en tiempo y forma para evitar intereses y multas.</p>
 <h3 class="font-display text-xl font-semibold text-ink mt-6 mb-3">Anticipos y regularizacion</h3>
-<p>Calculamos los anticipos anuales y te avisamos cada vencimiento. Si tenes deuda atrasada, evaluamos los planes de pago vigentes en AFIP para que regularices tu situacion de la mejor manera posible.</p>
+<p>Calculamos los anticipos anuales y te avisamos cada vencimiento. Si tenes deuda atrasada, evaluamos los planes de pago vigentes en ARCA para que regularices tu situacion de la mejor manera posible.</p>
 '@
     bullets = @(
       "Valuacion de inmuebles, automotores y bienes muebles",

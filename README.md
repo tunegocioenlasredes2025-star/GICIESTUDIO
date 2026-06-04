@@ -123,7 +123,7 @@ Configuración (en `vercel.json`):
 - **WhatsApp / Tel**: +54 11 5495-6931
 - **Email**: contacto@gici.com.ar
 - **Dirección**: Gral. Las Heras 350, B1714 Ituzaingó, Buenos Aires
-- **Horario**: Lun a Vie · 9:00 – 18:00
+- **Horario**: Lun a Vie · 8:00 – 17:00
 
 ---
 
