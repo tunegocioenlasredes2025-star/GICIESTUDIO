@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   GICI — estilos de marca personalizados
+   (todo lo que antes vivía en los <style> inline de cada página)
+   ============================================================ */
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: 'Manrope', system-ui, sans-serif;
+  background: #fbfaf8;
+  color: #1b110c;
+  background-image:
+    radial-gradient(1200px 600px at 0% -10%, rgba(8,129,138,0.06), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, rgba(8,129,138,0.04), transparent 55%);
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: 'Sora', system-ui, sans-serif; }
+
+::selection { background: rgba(8,129,138,.2); color: #1b110c; }
+
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,255,255,.5));
+  backdrop-filter: saturate(140%) blur(14px);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
+  border: 1px solid rgba(255,255,255,.6);
+}
+
+.gradient-text {
+  background-image: linear-gradient(120deg,#08818a 0%,#42b6c0 45%,#1b110c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-border { position: relative; isolation: isolate; }
+.gradient-border::before {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
+  background: linear-gradient(140deg, rgba(8,129,138,.6), rgba(255,255,255,.2) 40%, rgba(8,129,138,.15) 70%, rgba(27,17,12,.25));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+}
+
+.grid-pattern {
+  background-image: linear-gradient(to right, rgba(8,129,138,.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(8,129,138,.08) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, #000 30%, transparent 80%);
+          mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, #000 30%, transparent 80%);
+}
+
+.text-balance { text-wrap: balance; }
+
+@keyframes floatSlow { 0%,100%{transform:translateY(0) translateX(0)} 50%{transform:translateY(-18px) translateX(8px)} }
+.float-slow { animation: floatSlow 8s ease-in-out infinite; }
+
+@keyframes pulseRing { 0%{transform:scale(.9);opacity:.7} 70%,100%{transform:scale(2);opacity:0} }
+.pulse-ring { animation: pulseRing 2.4s cubic-bezier(0.4,0,0.6,1) infinite; }
+
+@keyframes fadeUp { 0%{opacity:0; transform:translateY(24px); filter:blur(6px)} 100%{opacity:1; transform:translateY(0); filter:blur(0)} }
+.reveal { opacity: 0; }
+.reveal.in { animation: fadeUp .9s cubic-bezier(.22,1,.36,1) both; }
+
+.display-xl { font-size: clamp(2.75rem,6vw,5.5rem); line-height: 1.02; letter-spacing: -.035em; }
+.display-lg { font-size: clamp(2.25rem,4.5vw,4rem); line-height: 1.05; letter-spacing: -.03em; }
+.display-md { font-size: clamp(1.75rem,3vw,2.75rem); line-height: 1.1; letter-spacing: -.02em; }
+
+input, textarea { font-family: inherit; }
+.nav-link.active { background: rgba(27,17,12,.06); color: #1b110c; }
+
+/* Respeta usuarios con reduce-motion (accesibilidad + UX) */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .float-slow, .pulse-ring { animation: none; }
+  .reveal { opacity: 1 !important; }
+  .reveal.in { animation: none; }
+}

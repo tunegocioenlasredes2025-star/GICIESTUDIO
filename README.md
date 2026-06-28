@@ -10,27 +10,55 @@ Sitio web institucional del estudio contable **GICI**, ubicado en Ituzaingó, Bu
 Sitio estático single-page construido con:
 
 - **HTML5** semántico
-- **Tailwind CSS** (CDN) con paleta de marca personalizada
-- **Google Fonts** — Sora (display), Inter (UI), Manrope (body)
-- **Vanilla JavaScript** — animaciones, counters, formulario, menú mobile, FAQ accordion
-- **Schema.org** JSON-LD multi-schema (LocalBusiness/AccountingService, Organization, WebSite, BreadcrumbList, FAQPage)
-- **Vercel Analytics + Speed Insights** (script directo, sin npm)
+- **Tailwind CSS compilado** (`assets/css/app.min.css`, ~31 KB) — sin CDN en producción. La paleta de marca vive en `tailwind.config.js` y los estilos custom en `assets/css/tailwind.src.css`.
+- **Google Fonts** — Sora (display), Inter (UI), Manrope (body), cargadas de forma no bloqueante.
+- **Vanilla JavaScript** — animaciones, counters, formulario, menú mobile, FAQ accordion.
+- **Schema.org** JSON-LD multi-schema (LocalBusiness/AccountingService, Organization, WebSite, BreadcrumbList, FAQPage, Service).
+- **Tracking de conversiones** — `assets/js/track.js` (clicks WhatsApp/teléfono/email, envío de formulario, scroll depth) hacia Vercel Analytics y GA4 (opcional).
+- **Vercel Analytics + Speed Insights** (script directo, sin npm).
 
-Sin build step. Sin dependencias instalables. Listo para servir.
+El sitio se **sirve estático** (sin build en Vercel): el CSS ya viene compilado y commiteado.
+
+### Recompilar el CSS (solo si tocás clases o estilos)
+
+```bash
+npx tailwindcss@3 -c tailwind.config.js -i assets/css/tailwind.src.css -o assets/css/app.min.css --minify
+```
+
+### Activar Google Analytics 4 (opcional)
+
+Abrí `assets/js/track.js` y pegá tu Measurement ID en la constante `GA4_ID` (`"G-XXXXXXXXXX"`). Con eso GA4 queda activo en todas las páginas. Si lo dejás vacío, no se carga nada y las conversiones igual se registran en Vercel Analytics.
 
 ## Estructura
 
 ```
 .
-├── index.html              # Sitio completo (one-pager con 5 secciones + FAQ)
+├── index.html                      # Home (one-pager: 6 secciones + FAQ)
+├── contador-ituzaingo.html         # Landing SEO — "contador ituzaingó"
+├── contador-monotributo.html       # Landing SEO — "contador para monotributistas"
+├── contador-pymes.html             # Landing SEO — "contador para pymes/empresas"
+├── liquidacion-de-sueldos.html     # Landing SEO — "liquidación de sueldos"
+├── servicios/                      # Páginas de servicio (4)
+│   ├── asesoramiento-impositivo-laboral.html
+│   ├── asesoramiento-comercial.html
+│   ├── liquidacion-ganancias.html
+│   └── bienes-personales.html
 ├── assets/
-│   ├── favicon.svg         # Favicon SVG
+│   ├── favicon.svg                 # Favicon SVG
+│   ├── css/
+│   │   ├── tailwind.src.css        # Fuente (directivas + estilos de marca)
+│   │   └── app.min.css             # CSS compilado y minificado (el que se sirve)
+│   ├── js/
+│   │   └── track.js                # Tracking de conversiones (GA4 + Vercel)
 │   └── images/
-│       └── logo.png        # Logo oficial GICI
-├── sitemap.xml             # Mapa del sitio para crawlers
-├── robots.txt              # Reglas para bots
-├── manifest.webmanifest    # PWA manifest (icono, theme color)
-├── vercel.json             # Config Vercel + headers seguridad + outputDirectory
+│       ├── logo.png                # Logo oficial GICI
+│       ├── og.svg                  # OG fuente (vector)
+│       └── og.png                  # OG 1200×630 (el que usan redes/WhatsApp)
+├── tailwind.config.js              # Config Tailwind (paleta, fuentes, content)
+├── sitemap.xml                     # Mapa del sitio para crawlers
+├── robots.txt                      # Reglas para bots
+├── manifest.webmanifest            # PWA manifest (icono, theme color)
+├── vercel.json                     # Config Vercel + headers + outputDirectory
 └── README.md
 ```
 

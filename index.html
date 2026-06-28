@@ -46,7 +46,8 @@
   <meta property="og:url" content="https://estudiocontablegici.com/" />
   <meta property="og:title" content="Estudio Contable en Ituzaingó · GICI · Contador, Impuestos y Asesoramiento" />
   <meta property="og:description" content="Estudio Contable en Ituzaingó (Zona Oeste). Liquidación de impuestos, Ganancias, Bienes Personales y asesoramiento integral para monotributistas, autónomos, PyMEs y empresas. Atención personalizada." />
-  <meta property="og:image" content="https://estudiocontablegici.com/assets/images/og.svg" />
+  <meta property="og:image" content="https://estudiocontablegici.com/assets/images/og.png" />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="GICI — Estudio Contable en Ituzaingó" />
@@ -55,7 +56,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Estudio Contable en Ituzaingó · GICI" />
   <meta name="twitter:description" content="Liquidación de impuestos, Ganancias, Bienes Personales y asesoramiento integral en Ituzaingó. Atención personalizada." />
-  <meta name="twitter:image" content="https://estudiocontablegici.com/assets/images/og.svg" />
+  <meta name="twitter:image" content="https://estudiocontablegici.com/assets/images/og.png" />
   <meta name="twitter:image:alt" content="GICI — Estudio Contable en Ituzaingó" />
 
   <!-- ============================ VERIFICATION (placeholders) ============================ -->
@@ -66,86 +67,15 @@
   <!-- ============================ PERFORMANCE / PRELOADS ============================ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
   <link rel="dns-prefetch" href="https://www.google.com" />
   <link rel="preload" as="image" href="/assets/images/logo.png" fetchpriority="high" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap" /></noscript>
+  <!-- CSS compilado de Tailwind (sin CDN · render no bloqueante pesado) -->
+  <link rel="stylesheet" href="/assets/css/app.min.css" />
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: { DEFAULT:'#08818a', 50:'#effbfb', 100:'#d7f4f5', 200:'#b3e8eb', 300:'#7ed4da', 400:'#42b6c0', 500:'#27989f', 600:'#08818a', 700:'#0b6770', 800:'#0f535a', 900:'#11464c', 950:'#042c31' },
-            ink: { DEFAULT:'#1b110c', 50:'#f7f5f4', 100:'#ebe7e5', 200:'#cdc4c0', 300:'#a89c96', 400:'#7d6d66', 500:'#5d4f49', 600:'#48403c', 700:'#393331', 800:'#2a2421', 900:'#1b110c' },
-            cream:'#fbfaf8', ivory:'#f4f1ee', stoneWarm:'#665e5c'
-          },
-          fontFamily: {
-            sans:['Inter','system-ui','sans-serif'],
-            display:['Sora','system-ui','sans-serif'],
-            body:['Manrope','system-ui','sans-serif']
-          },
-          boxShadow: {
-            soft:'0 4px 24px -8px rgba(27,17,12,0.08)',
-            premium:'0 20px 60px -20px rgba(8,129,138,0.25), 0 6px 20px -10px rgba(27,17,12,0.08)'
-          }
-        }
-      }
-    }
-  </script>
 
-  <style>
-    html { scroll-behavior:smooth; -webkit-font-smoothing:antialiased; }
-    body { font-family:'Manrope', system-ui, sans-serif; background:#fbfaf8; color:#1b110c;
-      background-image:
-        radial-gradient(1200px 600px at 0% -10%, rgba(8,129,138,0.06), transparent 60%),
-        radial-gradient(900px 500px at 100% 0%, rgba(8,129,138,0.04), transparent 55%);
-      background-attachment:fixed;
-    }
-    h1,h2,h3,h4,h5,h6 { font-family:'Sora', system-ui, sans-serif; }
-    ::selection { background:rgba(8,129,138,.2); color:#1b110c; }
-
-    .glass { background:linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,255,255,.5)); backdrop-filter:saturate(140%) blur(14px); -webkit-backdrop-filter:saturate(140%) blur(14px); border:1px solid rgba(255,255,255,.6); }
-
-    .gradient-text { background-image:linear-gradient(120deg,#08818a 0%,#42b6c0 45%,#1b110c 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
-
-    .gradient-border { position:relative; isolation:isolate; }
-    .gradient-border::before {
-      content:''; position:absolute; inset:0; border-radius:inherit; padding:1px;
-      background:linear-gradient(140deg, rgba(8,129,138,.6), rgba(255,255,255,.2) 40%, rgba(8,129,138,.15) 70%, rgba(27,17,12,.25));
-      -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor; mask-composite: exclude; pointer-events:none;
-    }
-
-    .grid-pattern {
-      background-image: linear-gradient(to right, rgba(8,129,138,.08) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(8,129,138,.08) 1px, transparent 1px);
-      background-size: 56px 56px;
-      -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, #000 30%, transparent 80%);
-              mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, #000 30%, transparent 80%);
-    }
-
-    .text-balance { text-wrap: balance; }
-
-    @keyframes floatSlow { 0%,100%{transform:translateY(0) translateX(0)} 50%{transform:translateY(-18px) translateX(8px)} }
-    .float-slow { animation: floatSlow 8s ease-in-out infinite; }
-
-    @keyframes pulseRing { 0%{transform:scale(.9);opacity:.7} 70%,100%{transform:scale(2);opacity:0} }
-    .pulse-ring { animation: pulseRing 2.4s cubic-bezier(0.4,0,0.6,1) infinite; }
-
-    @keyframes fadeUp { 0%{opacity:0; transform:translateY(24px); filter:blur(6px)} 100%{opacity:1; transform:translateY(0); filter:blur(0)} }
-    .reveal { opacity:0; }
-    .reveal.in { animation: fadeUp .9s cubic-bezier(.22,1,.36,1) both; }
-
-    .display-xl { font-size:clamp(2.75rem,6vw,5.5rem); line-height:1.02; letter-spacing:-.035em; }
-    .display-lg { font-size:clamp(2.25rem,4.5vw,4rem); line-height:1.05; letter-spacing:-.03em; }
-    .display-md { font-size:clamp(1.75rem,3vw,2.75rem); line-height:1.1; letter-spacing:-.02em; }
-
-    input, textarea { font-family: inherit; }
-    .nav-link.active { background: rgba(27,17,12,.06); color:#1b110c; }
-  </style>
 </head>
 <body class="font-body min-h-screen flex flex-col">
 
@@ -404,6 +334,17 @@
           <li class="flex items-start gap-2 text-sm text-ink/70"><span class="mt-2 h-1 w-1 rounded-full bg-brand-600"></span>Anticipos y planes de regularización</li>
         </ul>
       </article>
+    </div>
+
+    <!-- Enlaces a landing pages locales (SEO interno) -->
+    <div class="reveal mt-10 rounded-3xl border border-ink/10 bg-white/60 backdrop-blur p-6 sm:p-7">
+      <p class="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-brand-700">Soluciones por perfil y zona</p>
+      <div class="mt-4 flex flex-wrap gap-2.5">
+        <a href="/contador-ituzaingo.html" class="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:border-brand-600/30 hover:text-ink transition">Contador en Ituzaingó <span class="text-brand-700">→</span></a>
+        <a href="/contador-monotributo.html" class="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:border-brand-600/30 hover:text-ink transition">Contador para monotributistas <span class="text-brand-700">→</span></a>
+        <a href="/contador-pymes.html" class="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:border-brand-600/30 hover:text-ink transition">Contador para PyMEs y empresas <span class="text-brand-700">→</span></a>
+        <a href="/liquidacion-de-sueldos.html" class="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:border-brand-600/30 hover:text-ink transition">Liquidación de sueldos <span class="text-brand-700">→</span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -867,6 +808,22 @@
       </div>
 
       <div class="md:col-span-4">
+        <h3 class="font-display text-sm font-semibold uppercase tracking-[0.18em] text-cream/60">Soluciones</h3>
+        <ul class="mt-5 grid grid-cols-1 gap-3 text-sm sm:grid-cols-2">
+          <li><a href="/contador-ituzaingo.html" class="text-cream/80 hover:text-cream">Contador en Ituzaingó</a></li>
+          <li><a href="/contador-monotributo.html" class="text-cream/80 hover:text-cream">Contador monotributo</a></li>
+          <li><a href="/contador-pymes.html" class="text-cream/80 hover:text-cream">Contador para PyMEs</a></li>
+          <li><a href="/liquidacion-de-sueldos.html" class="text-cream/80 hover:text-cream">Liquidación de sueldos</a></li>
+          <li><a href="/servicios/asesoramiento-impositivo-laboral.html" class="text-cream/80 hover:text-cream">Asesoramiento impositivo</a></li>
+          <li><a href="/servicios/liquidacion-ganancias.html" class="text-cream/80 hover:text-cream">Liquidación de Ganancias</a></li>
+          <li><a href="/servicios/bienes-personales.html" class="text-cream/80 hover:text-cream">Bienes Personales</a></li>
+          <li><a href="/servicios/asesoramiento-comercial.html" class="text-cream/80 hover:text-cream">Asesoramiento comercial</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid gap-12 pb-8 md:grid-cols-12">
+      <div class="md:col-span-12">
         <h3 class="font-display text-sm font-semibold uppercase tracking-[0.18em] text-cream/60">Hablemos</h3>
         <p class="mt-5 text-sm leading-relaxed text-cream/70">Te respondemos en menos de 24 horas hábiles. Contanos tu caso y te asesoramos sin compromiso.</p>
         <div class="mt-6 flex flex-wrap gap-3">
@@ -907,7 +864,7 @@
       "description": "Estudio contable en Ituzaingó, Zona Oeste de Buenos Aires. Asesoramiento impositivo, laboral y comercial. Liquidación de impuestos, Ganancias y Bienes Personales para monotributistas, autónomos, PyMEs y empresas.",
       "url": "https://estudiocontablegici.com/",
       "logo": "https://estudiocontablegici.com/assets/images/logo.png",
-      "image": "https://estudiocontablegici.com/assets/images/og.svg",
+      "image": "https://estudiocontablegici.com/assets/images/og.png",
       "telephone": "+54-11-5495-6931",
       "email": "contacto@gici.com.ar",
       "priceRange": "$$",
@@ -1189,6 +1146,8 @@
   });
 </script>
 
+<!-- Tracking de conversiones (GA4 + Vercel) -->
+<script defer src="/assets/js/track.js"></script>
 <!-- ============================ VERCEL ANALYTICS (sitio estático) ============================ -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
